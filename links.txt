@@ -1,2 +1,10 @@
+# Links collection about BadUSB - news, discussions, LWN, defenses...
+# Last udpated Jan 8, 2015
+http://www.wired.com/2014/10/code-published-for-unfixable-usb-attack/
 http://lwn.net/Articles/608503/
 http://lwn.net/Articles/625734/
+http://www.ironkey.com/en-US/solutions/protect-against-badusb.html
+
+# Code (finally...)
+# Jan 8, 2015
+https://github.com/adamcaudill/Psychson
